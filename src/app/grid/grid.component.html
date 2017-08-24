@@ -1,3 +1,13 @@
-<p>
-  grid works!
-</p>
+<div class="row">
+  <div class="col s3 hdivider" *ngFor="let group of groups">
+    <h3 class="grey white-text" [innerHtml]="group.name"></h3>
+    <div class="col-card" *ngFor="let item of group.items" [dragula]="firstBag" >
+      <div class="card red lighten-2">
+        <div class="card-content white-text">
+          <h4 class="card-title" [innerHtml]="item.name"></h4>
+          <p [innerHtml]="item.description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
